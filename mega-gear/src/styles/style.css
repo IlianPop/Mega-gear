@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+.container {
+    display: flex;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+header a:hover {
+    color: #85763f;
+}
+a {
+    text-decoration: none;
+    color: #9b8d58;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 20px;
+}
+body {
+    background-image: url(images/Pegeot.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', system-ui;
+}
+button {
+    position: absolute;
+    top: 485px;
+    left: 80px;
+    border-radius: 19px;
+    height: 63px;
+    width: 170px;
+    border: none;
+    background-color: #60b62b;
+    color: #274116;
+    font-family: 'Montserrat', system-ui;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0;
+}
+.logo {
+    position: absolute;
+    top: 32px;
+    left: 27px;
+}
+.text1 {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: bold;
+}
+.text2 {
+    position: absolute;
+    top: 370px;
+    left: 100px;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 43px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+}
+button:hover {
+    background-color: #478124;
+}
