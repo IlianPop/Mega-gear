@@ -8,7 +8,7 @@ app.use(cors());
 mongoose.connect(Tok);
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
-app.use(bodyparser.json());
+app.use(bodyParser.json());
 app.use('/api', require('./api'));
 app.listen(4000, () => {
   console.log('Сервер запущено');

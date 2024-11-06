@@ -77,10 +77,8 @@ const Kontakty = () => {
                 <a href="https://maps.app.goo.gl/4phvHhL8n49XBFYe7" target="_blank" rel="noopener noreferrer">
                     <StyledImage src={image1} alt="Карта" />
                 </a>
-                <Link to="/katalog">
-                    <Link to="/log">
-                        <Lin>А</Lin>
-                    </Link>
+                <Link to="/log">
+                    <Lin>А</Lin>
                 </Link>
             </Container>
         </PageWrapper>

@@ -45,12 +45,6 @@ const StyledLink = styled(Link)`
 `;
 
 class App extends React.Component {
-    gettingcar = async () => {
-        const api_url = await fetch('http://localhost:4000/api/cars/Jaguar_X-type_2004');
-        const data = await api_url.json();
-        return data;
-    };
-
     render() {
         return (
             <BodyWrapper>
@@ -64,7 +58,7 @@ class App extends React.Component {
                 <Routes>
                     <Route path="/" element={<Main />} />
                     <Route path="/katalog" element={<Katalog />} />
-                    <Route path="/konfigurator/:id" element={<Konfigurator gettingcar={this.gettingcar} />} />
+                    <Route path="/konfigurator" element={<Konfigurator />} />
                     <Route path="/poryvnyannya" element={<Porivnyannya />} />
                     <Route path="/kontakty" element={<Kontakty />} />
                     <Route path="/log" element={<Logi />} />

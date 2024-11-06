@@ -26,6 +26,7 @@ const config = {
                         loader: 'babel-loader',
                         options: {
                             presets: ['@babel/preset-env', '@babel/preset-react'],
+                            plugins: ['istanbul'], // Додаємо плагін для code coverage
                         },
                     },
                 ],
@@ -53,8 +54,10 @@ const config = {
         extensions: ['.js', '.jsx'],
     },
     devServer: {
-        contentBase: path.resolve(__dirname, '../dist'),
-        hot: true,
+        static: {
+            directory: path.join(__dirname, 'public'),
+        },
+        port: 8080,
     },
 };
 

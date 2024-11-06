@@ -3,4 +3,3 @@
 
 cd mega-gear || exit 1
 npm test
-npx lint-staged

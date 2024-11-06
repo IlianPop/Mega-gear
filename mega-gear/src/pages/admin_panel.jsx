@@ -432,13 +432,13 @@ const Admin_panel = () => {
                         </div>
 
                         <div>
-                            <Buttt type="button" onClick={handleAdd}>
+                            <Buttt type="button" onClick={handleAdd} className="handleAdd">
                                 Додати
                             </Buttt>
-                            <Buttt1 type="button" onClick={handleDell}>
+                            <Buttt1 type="button" onClick={handleDell} className="handleDell">
                                 Видалити
                             </Buttt1>
-                            <Buttt type="button" onClick={handleSearch}>
+                            <Buttt type="button" onClick={handleSearch} className="handleSearch">
                                 Знайти
                             </Buttt>
                         </div>
