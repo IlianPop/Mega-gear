@@ -6,6 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const config = {
+    mode: 'development', // або 'production'
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, '../dist'),
@@ -25,18 +26,38 @@ const config = {
                         loader: 'babel-loader',
                         options: {
                             presets: ['@babel/preset-env', '@babel/preset-react'],
+                            plugins: ['istanbul'], // Додаємо плагін для code coverage
                         },
                     },
                 ],
+                exclude: /node_modules/, // Ігноруйте node_modules
             },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]',
+                            outputPath: 'images/',
+                        },
+                    },
+                ],
+            },
         ],
     },
     resolve: {
         extensions: ['.js', '.jsx'],
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'public'),
+        },
+        port: 8080,
     },
 };
 

@@ -1,7 +1,8 @@
 import React from 'react';
+
 const Katalog = () => {
     return (
-        <div>
+        <div className="e1">
             <p>Каталог</p>
         </div>
     );
