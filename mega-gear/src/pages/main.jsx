@@ -57,9 +57,7 @@ const Main = () => {
                 </h1>
             </Text1>
             <Link to="/katalog">
-                <Link to="/katalog">
-                    <Butt>Замовити</Butt>
-                </Link>
+                <Butt>Замовити</Butt>
             </Link>
         </div>
     );
