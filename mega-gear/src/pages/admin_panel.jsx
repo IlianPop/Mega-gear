@@ -8,13 +8,19 @@ const Buttt = styled.button`
     color: white;
     margin: 5px;
 `;
+const StyledImage = styled.img`
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+`;
 const ImageContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
-    max-width: 100%;
+    width: 600px;
+    max-width: 600px;
 `;
 const Buttt1 = styled.button`
     background-color: #d42d2d;
@@ -101,6 +107,7 @@ const Admin_panel = () => {
             })
                 .then((response) => {
                     if (response.ok) {
+                        setFetchedImage(image);
                         alert('Зображення успішно завантажено!');
                     } else {
                         alert('Помилка при завантаженні зображення.');
@@ -208,6 +215,26 @@ const Admin_panel = () => {
                 .catch((error) => {
                     console.error('Сталася помилка:', error);
                 });
+        } else if (name && engine && !country && !color && !box && !comp) {
+            fetch(`http://localhost:4000/api/cars/${name}/add-engine`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ engine: engine }),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        alert('Мотор успішно додано!');
+                        setName('');
+                        setComp('');
+                    } else {
+                        throw new Error('Помилка при додаванні мотору');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Сталася помилка:', error);
+                });
         } else {
             alert('Будь ласка, заповніть необхідні поля.');
         }
@@ -266,7 +293,16 @@ const Admin_panel = () => {
                 });
         }
     };
-
+    const handleClear = (e) => {
+        e.preventDefault();
+        setName('');
+        setBox('');
+        setComp('');
+        setCountry('');
+        setColor('');
+        setEngine('');
+        setFetchedImage(null);
+    };
     const handleDell = (e) => {
         e.preventDefault();
         if (name && !engine && !box && !comp && !color) {
@@ -441,6 +477,9 @@ const Admin_panel = () => {
                             <Buttt type="button" onClick={handleSearch} className="handleSearch">
                                 Знайти
                             </Buttt>
+                            <Buttt type="button" onClick={handleClear} className="handleClear">
+                                X
+                            </Buttt>
                         </div>
                         <input type="file" onChange={handleImageChange} accept="image/*" lang="uk" />
                         <Buttt type="button" onClick={addPhoto}>
@@ -453,7 +492,7 @@ const Admin_panel = () => {
                     {fetchedImage && (
                         <div>
                             <h3>Зображення машини:</h3>
-                            <img src={fetchedImage} alt="Об'єкт" style={{ width: '100%', height: 'auto' }} />
+                            <StyledImage src={fetchedImage} alt="Об'єкт" />
                         </div>
                     )}
                 </ImageContainer>

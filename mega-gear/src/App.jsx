@@ -51,14 +51,14 @@ class App extends React.Component {
                 <Header>
                     <StyledLink to="/">Головна</StyledLink>
                     <StyledLink to="/katalog">Каталог</StyledLink>
-                    <StyledLink to="/konfigurator">Конфігуратор</StyledLink>
+                    <StyledLink to="/konfigurator/2109">Конфігуратор</StyledLink>
                     <StyledLink to="/poryvnyannya">Порівняння</StyledLink>
                     <StyledLink to="/kontakty">Контакти</StyledLink>
                 </Header>
                 <Routes>
                     <Route path="/" element={<Main />} />
                     <Route path="/katalog" element={<Katalog />} />
-                    <Route path="/konfigurator" element={<Konfigurator />} />
+                    <Route path="/konfigurator/:carName" element={<Konfigurator />} />
                     <Route path="/poryvnyannya" element={<Porivnyannya />} />
                     <Route path="/kontakty" element={<Kontakty />} />
                     <Route path="/log" element={<Logi />} />
